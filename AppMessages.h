@@ -21,6 +21,8 @@ extern "C"
 {
 #endif
 
+#include "AppMessageTypes.h"
+
 // Serial Message Defines and Types
 #define APP_MSG_MAX_LENGTH         (66)
 #define APP_MSG_RESPONSE_BIT       (0x80)
@@ -74,7 +76,7 @@ typedef enum
 // Bootloader states (substates)
 typedef enum
 {
-  BL_STATE_INIT,
+  BL_STATE_INIT = 0x00,
   BL_STATE_WRITE_ADDRESS,
   BL_STATE_WRITE_ADDRESS_ACK,
   BL_STATE_WRITE_CHUNK,
@@ -104,7 +106,7 @@ typedef enum
 // Bootloader high-level states
 typedef enum
 {
-  BL_HL_STATE_NULL,
+  BL_HL_STATE_NULL = 0x00,
   BL_HL_STATE_INIT,
   BL_HL_STATE_READY,
   BL_HL_STATE_PROGRAMMING,
@@ -117,5 +119,26 @@ typedef enum
   BL_CMD_RESTART    = 0x01,
   BL_CMD_END        = 0x02
 } BL_CMD_T;
+
+// Bootloader Message Definitions
+
+typedef struct
+{
+  PTD_UINT8 command;
+} BL_MSG_CMD_T;
+
+typedef struct
+{
+  PTD_UINT16 fwAddress;
+  PTD_UINT8 * fwBlock;
+} BL_MSG_FW_BLOCK_T;
+
+typedef struct
+{
+  PTD_UINT8 hlState;  // BL_HL_STATE_T
+  PTD_UINT8 intState; // BL_STATE_T
+  PTD_UINT8 blocksSent;
+  PTD_UINT16 bytesSent;
+} BL_MSG_STATUS_T;
 
 #endif
