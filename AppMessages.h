@@ -137,7 +137,7 @@ typedef struct
 {
   PTD_UINT8 hlState;  // BL_HL_STATE_T
   PTD_UINT8 intState; // BL_STATE_T
-  PTD_UINT8 blocksSent;
+  PTD_UINT16 blocksSent;
   PTD_UINT16 bytesSent;
 } BL_MSG_STATUS_T;
 
