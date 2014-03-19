@@ -116,8 +116,8 @@ typedef enum
 typedef enum
 {
   BL_CMD_START_PRG  = 0x00,
-  BL_CMD_RESTART    = 0x01,
-  BL_CMD_END        = 0x02
+  BL_CMD_VERIFY     = 0x01,
+  BL_CMD_RESET      = 0x02
 } BL_CMD_T;
 
 // Bootloader Message Definitions
@@ -125,6 +125,7 @@ typedef enum
 typedef struct
 {
   PTD_UINT8 command;
+  PTD_UINT8 payload[2];
 } BL_MSG_CMD_T;
 
 typedef struct
