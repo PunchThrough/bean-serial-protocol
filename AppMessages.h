@@ -13,13 +13,10 @@
   contact Punch Through Design at contact@punchthrough.com
 */
 
+
 #ifndef APPMESSAGES_H
 #define APPMESSAGES_H
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
 
 #include "AppMessageTypes.h"
 
@@ -143,5 +140,6 @@ typedef struct
   PTD_UINT16 blocksSent;
   PTD_UINT16 bytesSent;
 } BL_MSG_STATUS_T;
+
 
 #endif

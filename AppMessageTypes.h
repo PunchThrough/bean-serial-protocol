@@ -21,10 +21,6 @@
 #ifndef APPMESSAGETYPES_H
 #define APPMESSAGETYPES_H
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
 
 /* ----------- IAR Compiler ----------- */
 #ifdef __IAR_SYSTEMS_ICC__
@@ -45,5 +41,6 @@ typedef Uint16 PTD_UINT16;
 typedef Uint8 PTD_UINT8;
 
 #endif
+
 
 #endif
