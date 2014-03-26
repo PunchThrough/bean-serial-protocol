@@ -69,12 +69,72 @@ typedef enum
   MSG_ID_CC_LED_WRITE_ALL   = 0x2001,
   MSG_ID_CC_LED_READ_ALL    = 0x2002,
   MSG_ID_CC_ACCEL_READ      = 0x2010,
-  MSG_ID_AR_SET_POWER_INT   = 0x3000,
+  MSG_ID_AR_SET_POWER       = 0x3000,
   MSG_ID_AR_GET_CONFIG      = 0x3006,
-  MSG_ID_AR_POWER_OFFON     = 0x3010,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
   MSG_ID_DB_COUNTER         = 0xFE01
 } MSG_ID_T;
+
+// Message Body Structs
+//Radio
+typedef enum {
+   TXPOWER_4DB = 0x00,
+   TXPOWER_0DB,
+   TXPOWER_NEG6DB,
+   TXPOWER_NEG23DB,
+} BT_TXPOWER_DB_T;
+
+typedef struct {
+  PTD_UINT8 adv_enabled;
+  PTD_UINT16 adv_int;
+  PTD_UINT16 conn_int;
+  PTD_UINT8 power;
+  // Name might get dropped.  TBD...
+  PTD_UINT8 local_name[20];
+} BT_RADIOCONFIG_T;
+
+//Accelerometer
+typedef enum {
+  ACC_AXIS_X = 0x00,
+  ACC_AXIS_Y,
+  ACC_AXIS_Z,
+} ACC_AXIS_T;
+
+typedef struct {
+   PTD_UINT16 xAxis;
+   PTD_UINT16 yAxis;
+   PTD_UINT16 zAxis;
+} ACC_READING_T;
+
+typedef struct {
+  PTD_UINT8 axis;
+  PTD_UINT16 reading;
+} ACC_AXES_READING_T;
+
+//LED
+typedef struct {
+   PTD_UINT8 red;
+   PTD_UINT8 green;
+   PTD_UINT8 blue;
+} LED_SETTING_T;
+
+typedef enum {
+  LED_RED = 0x00,
+  LED_GREEN,
+  LED_BLUE
+} LED_COLOR_T;
+
+typedef struct {
+  PTD_UINT8 color;
+  PTD_UINT8 intensity;
+} LED_IND_SETTING_T;
+
+// Arduino Power
+typedef struct {
+  PTD_UINT8 isOn;
+  PTD_UINT16 delay_ms;
+} AR_PWR_SET_T;
+
 
 // Bootloader states (substates)
 typedef enum
