@@ -30,6 +30,12 @@
 #define SERIAL_MSG_SIZE_FOOTER     (SERIAL_FIELD_SIZE_CRC)
 #define SERIAL_MSG_SIZE_OVERHEAD   (SERIAL_MSG_SIZE_HEADER + SERIAL_MSG_SIZE_FOOTER)
 
+#define UT_CHAR_START (0x7E)
+#define UT_CHAR_ESC   (0x7D)
+#define UT_CHAR_END   (0x7F)
+
+// XOR the byte to escape it
+#define HDLC_ESCAPE_XOR (0x20)
 
 // Message IDs: Major only
 typedef enum
