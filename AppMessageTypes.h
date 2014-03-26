@@ -25,20 +25,23 @@
 /* ----------- IAR Compiler ----------- */
 #ifdef __IAR_SYSTEMS_ICC__
 
+typedef uint32 PTD_UINT32;
 typedef uint16 PTD_UINT16;
 typedef uint8 PTD_UINT8;
 
 /* ----------- Arduino ----------- */
 #elif __cplusplus
 
+typedef uint32_t PTD_UINT32;
 typedef uint16_t PTD_UINT16;
-typedef uint8_t PTD_UINT8;
+typedef uint8_t  PTD_UINT8;
 
 /* ----------- Objective-C ----------- */
 #elif __objectivec
 
+typedef Uint32 PTD_UINT32;
 typedef Uint16 PTD_UINT16;
-typedef Uint8 PTD_UINT8;
+typedef Uint8  PTD_UINT8;
 
 #endif
 
