@@ -101,9 +101,9 @@ typedef enum {
 } ACC_AXIS_T;
 
 typedef struct {
-   PTD_UINT16 xAxis;
-   PTD_UINT16 yAxis;
-   PTD_UINT16 zAxis;
+   PTD_INT16 xAxis;
+   PTD_INT16 yAxis;
+   PTD_INT16 zAxis;
 } ACC_READING_T;
 
 typedef struct {

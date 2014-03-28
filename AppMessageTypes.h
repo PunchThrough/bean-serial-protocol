@@ -28,6 +28,7 @@
 typedef uint32 PTD_UINT32;
 typedef uint16 PTD_UINT16;
 typedef uint8 PTD_UINT8;
+typedef int16 PTD_INT16;
 
 /* ----------- Arduino ----------- */
 #elif __cplusplus
@@ -35,6 +36,7 @@ typedef uint8 PTD_UINT8;
 typedef uint32_t PTD_UINT32;
 typedef uint16_t PTD_UINT16;
 typedef uint8_t  PTD_UINT8;
+typedef int16_t PTD_INT16;
 
 /* ----------- Objective-C ----------- */
 #elif __objectivec
@@ -42,6 +44,7 @@ typedef uint8_t  PTD_UINT8;
 typedef Uint32 PTD_UINT32;
 typedef Uint16 PTD_UINT16;
 typedef Uint8  PTD_UINT8;
+typedef Int16 PTD_INT16;
 
 #endif
 
