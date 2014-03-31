@@ -72,7 +72,8 @@ typedef enum
   MSG_ID_AR_SET_POWER       = 0x3000,
   MSG_ID_AR_GET_CONFIG      = 0x3006,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
-  MSG_ID_DB_COUNTER         = 0xFE01
+  MSG_ID_DB_COUNTER         = 0xFE01,
+  MSG_ID_DB_E2E_LOOPBACK    = 0xFE02
 } MSG_ID_T;
 
 // Message Body Structs
