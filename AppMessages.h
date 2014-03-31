@@ -94,6 +94,11 @@ typedef struct {
   PTD_UINT8 local_name[20];
 } BT_RADIOCONFIG_T;
 
+typedef struct {
+  PTD_UINT8 number;
+  PTD_UINT8 scratch[20];
+} BT_SCRATCH_T;
+
 //Accelerometer
 typedef enum {
   ACC_AXIS_X = 0x00,
