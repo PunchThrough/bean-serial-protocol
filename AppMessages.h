@@ -23,6 +23,9 @@
 // Serial Message Defines and Types
 #define APP_MSG_MAX_LENGTH         (66)
 #define APP_MSG_RESPONSE_BIT       (0x80)
+#define APP_MSG_FIELD_SIZE_MAJOR   (1)
+#define APP_MSG_FIELD_SIZE_MINOR   (1)
+#define APP_MSG_ID_SIZE            (APP_MSG_FIELD_SIZE_MAJOR + APP_MSG_FIELD_SIZE_MINOR)
 #define SERIAL_FIELD_SIZE_LENGTH   (1)
 #define SERIAL_FIELD_SIZE_RESERVED (1)
 #define SERIAL_FIELD_SIZE_CRC      (2)
@@ -36,6 +39,30 @@
 
 // XOR the byte to escape it
 #define HDLC_ESCAPE_XOR (0x20)
+
+// Minimum message payload lengths sans header size
+#define  MSG_MIN_LEN_SERIAL_DATA        (0)
+#define  MSG_MIN_LEN_BT_SET_ADV         (2)
+#define  MSG_MIN_LEN_BT_SET_CONN        (2)
+#define  MSG_MIN_LEN_BT_SET_LOCAL_NAME  (1)
+#define  MSG_MIN_LEN_BT_SET_PIN         (2)
+#define  MSG_MIN_LEN_BT_SET_TX_PWR      (1)
+#define  MSG_MIN_LEN_BT_GET_CONFIG      (0)
+#define  MSG_MIN_LEN_BT_ADV_ONOFF       (1)
+#define  MSG_MIN_LEN_BT_SET_SCRATCH     (2)
+#define  MSG_MIN_LEN_BT_GET_SCRATCH     (1)
+#define  MSG_MIN_LEN_BT_RESTART         (0)
+#define  MSG_MIN_LEN_BL_CMD             (1)
+#define  MSG_MIN_LEN_BL_FW_BLOCK        (0)
+#define  MSG_MIN_LEN_BL_STATUS          (0)
+#define  MSG_MIN_LEN_CC_LED_WRITE       (2)
+#define  MSG_MIN_LEN_CC_LED_WRITE_ALL   (3)
+#define  MSG_MIN_LEN_CC_LED_READ_ALL    (0)
+#define  MSG_MIN_LEN_CC_ACCEL_READ      (0)
+#define  MSG_MIN_LEN_AR_SLEEP           (4)
+#define  MSG_MIN_LEN_DB_LOOPBACK        (0)
+#define  MSG_MIN_LEN_DB_COUNTER         (0)
+#define  MSG_MIN_LEN_DB_E2E_LOOPBACK    (0)
 
 // Message IDs: Major only
 typedef enum
@@ -69,8 +96,7 @@ typedef enum
   MSG_ID_CC_LED_WRITE_ALL   = 0x2001,
   MSG_ID_CC_LED_READ_ALL    = 0x2002,
   MSG_ID_CC_ACCEL_READ      = 0x2010,
-  MSG_ID_AR_SET_POWER       = 0x3000,
-  MSG_ID_AR_GET_CONFIG      = 0x3006,
+  MSG_ID_AR_SLEEP           = 0x3000,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
   MSG_ID_DB_COUNTER         = 0xFE01,
   MSG_ID_DB_E2E_LOOPBACK    = 0xFE02
@@ -114,7 +140,7 @@ typedef struct {
 
 typedef struct {
   PTD_UINT8 axis;
-  PTD_UINT16 reading;
+  PTD_INT16 reading;
 } ACC_AXES_READING_T;
 
 //LED
