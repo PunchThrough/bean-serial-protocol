@@ -104,6 +104,11 @@ typedef enum
   MSG_ID_DB_PTM             = 0xFE03
 } MSG_ID_T;
 
+typedef enum
+{
+  PTM_MSG_ID_GET_PINSTATE = 0x01
+} PTM_MSG_ID_T;
+
 // Message Body Structs
 //Radio
 typedef enum {
