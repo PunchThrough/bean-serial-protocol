@@ -63,6 +63,7 @@
 #define  MSG_MIN_LEN_DB_LOOPBACK        (0)
 #define  MSG_MIN_LEN_DB_COUNTER         (0)
 #define  MSG_MIN_LEN_DB_E2E_LOOPBACK    (0)
+#define  MSG_MIN_LEN_DB_PTM             (0)
 
 // Message IDs: Major only
 typedef enum
@@ -99,7 +100,8 @@ typedef enum
   MSG_ID_AR_SLEEP           = 0x3000,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
   MSG_ID_DB_COUNTER         = 0xFE01,
-  MSG_ID_DB_E2E_LOOPBACK    = 0xFE02
+  MSG_ID_DB_E2E_LOOPBACK    = 0xFE02,
+  MSG_ID_DB_PTM             = 0xFE03
 } MSG_ID_T;
 
 // Message Body Structs
