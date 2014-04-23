@@ -86,6 +86,7 @@ typedef enum
   MSG_ID_BT_SET_PIN         = 0x0506,
   MSG_ID_BT_SET_TX_PWR      = 0x0508,
   MSG_ID_BT_GET_CONFIG      = 0x0510,
+  MSG_ID_BT_SET_CONFIG      = 0x0511,
   MSG_ID_BT_ADV_ONOFF       = 0x0512,
   MSG_ID_BT_SET_SCRATCH     = 0x0514,
   MSG_ID_BT_GET_SCRATCH     = 0x0515,
@@ -125,6 +126,7 @@ typedef struct {
   PTD_UINT8 power;
   // Name might get dropped.  TBD...
   PTD_UINT8 local_name[20];
+  PTD_UINT8 local_name_size;
 } BT_RADIOCONFIG_T;
 
 typedef struct {
