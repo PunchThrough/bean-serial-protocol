@@ -230,6 +230,8 @@ typedef enum
 } BL_CMD_T;
 
 // Bootloader Message Definitions
+#define BL_HEX_FIELD_SIZE (4)
+#define BL_CRC_FIELD_SIZE (4)
 
 typedef struct
 {
