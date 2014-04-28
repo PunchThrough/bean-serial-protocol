@@ -122,7 +122,6 @@ typedef enum {
 } BT_TXPOWER_DB_T;
 
 typedef struct {
-  PTD_UINT8 adv_enabled;
   PTD_UINT16 adv_int;
   PTD_UINT16 conn_int;
   PTD_UINT8 power;
