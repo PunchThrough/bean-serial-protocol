@@ -253,5 +253,10 @@ typedef struct
   PTD_UINT16 bytesSent;
 } BL_MSG_STATUS_T;
 
+typedef struct
+{
+  uint32 sketchSize;
+  uint32 sketchCrc;  // CRC32
+} BL_SKETCH_META_T;
 
 #endif
