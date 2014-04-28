@@ -234,7 +234,7 @@ typedef enum
 typedef struct
 {
   PTD_UINT8 command;
-  PTD_UINT8 payload[2];
+  PTD_UINT8 payload[8];
 } BL_MSG_CMD_T;
 
 typedef struct
