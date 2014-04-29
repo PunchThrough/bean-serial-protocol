@@ -92,9 +92,10 @@ typedef enum
   MSG_ID_BT_SET_SCRATCH     = 0x0514,
   MSG_ID_BT_GET_SCRATCH     = 0x0515,
   MSG_ID_BT_RESTART         = 0x0520,
-  MSG_ID_BL_CMD             = 0x1000,
+  MSG_ID_BL_CMD_START       = 0x1000,
   MSG_ID_BL_FW_BLOCK        = 0x1001,
   MSG_ID_BL_STATUS          = 0x1002,
+  MSG_ID_BL_GET_META        = 0x1003,
   MSG_ID_CC_LED_WRITE       = 0x2000,
   MSG_ID_CC_LED_WRITE_ALL   = 0x2001,
   MSG_ID_CC_LED_READ_ALL    = 0x2002,
@@ -234,9 +235,17 @@ typedef enum
 
 typedef struct
 {
-  PTD_UINT8 command;
-  PTD_UINT8 payload[8];
-} BL_MSG_CMD_T;
+  BL_SKETCH_META_DATA_T metaData;
+} BL_MSG_CMD_START_T;
+
+typedef struct
+{
+  PTD_UINT32 hexSize;
+  PTD_UINT32 hexCrc;
+  PTD_UINT32 timestamp;
+  PTD_UINT8 hexNameSize;
+  PTD_UINT8 hexName[20];
+} BL_SKETCH_META_DATA_T;
 
 typedef struct
 {
@@ -252,10 +261,5 @@ typedef struct
   PTD_UINT16 bytesSent;
 } BL_MSG_STATUS_T;
 
-typedef struct
-{
-  uint32 sketchSize;
-  uint32 sketchCrc;  // CRC32
-} BL_SKETCH_META_T;
 
 #endif
