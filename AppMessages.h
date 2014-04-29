@@ -52,7 +52,7 @@
 #define  MSG_MIN_LEN_BT_SET_SCRATCH     (2)
 #define  MSG_MIN_LEN_BT_GET_SCRATCH     (1)
 #define  MSG_MIN_LEN_BT_RESTART         (0)
-#define  MSG_MIN_LEN_BL_CMD             (1)
+#define  MSG_MIN_LEN_BL_CMD_START       (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK        (0)
 #define  MSG_MIN_LEN_BL_STATUS          (0)
 #define  MSG_MIN_LEN_CC_LED_WRITE       (2)
@@ -235,17 +235,18 @@ typedef enum
 
 typedef struct
 {
-  BL_SKETCH_META_DATA_T metaData;
-} BL_MSG_CMD_START_T;
-
-typedef struct
-{
   PTD_UINT32 hexSize;
   PTD_UINT32 hexCrc;
   PTD_UINT32 timestamp;
   PTD_UINT8 hexNameSize;
   PTD_UINT8 hexName[20];
 } BL_SKETCH_META_DATA_T;
+
+typedef struct
+{
+  BL_SKETCH_META_DATA_T metaData;
+} BL_MSG_CMD_START_T;
+
 
 typedef struct
 {
