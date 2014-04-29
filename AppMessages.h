@@ -55,6 +55,7 @@
 #define  MSG_MIN_LEN_BL_CMD_START       (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK        (0)
 #define  MSG_MIN_LEN_BL_STATUS          (0)
+#define  MSG_MIN_LEN_BL_GET_META        (0)
 #define  MSG_MIN_LEN_CC_LED_WRITE       (2)
 #define  MSG_MIN_LEN_CC_LED_WRITE_ALL   (3)
 #define  MSG_MIN_LEN_CC_LED_READ_ALL    (0)
@@ -232,6 +233,7 @@ typedef enum
 // Bootloader Message Definitions
 #define BL_HEX_FIELD_SIZE (4)
 #define BL_CRC_FIELD_SIZE (4)
+#define MAX_SKETCH_NAME_SIZE (20)
 
 typedef struct
 {
@@ -239,7 +241,7 @@ typedef struct
   PTD_UINT32 hexCrc;
   PTD_UINT32 timestamp;
   PTD_UINT8 hexNameSize;
-  PTD_UINT8 hexName[20];
+  PTD_UINT8 hexName[MAX_SKETCH_NAME_SIZE];
 } BL_SKETCH_META_DATA_T;
 
 typedef struct
