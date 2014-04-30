@@ -111,7 +111,8 @@ typedef enum
 
 typedef enum
 {
-  PTM_MSG_ID_GET_PINSTATE = 0x01
+  PTM_MSG_ID_GET_PINSTATE = 0x01,
+  PTM_MSG_ID_SET_PINSTATE = 0x03
 } PTM_MSG_ID_T;
 
 // Message Body Structs
