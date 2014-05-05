@@ -41,11 +41,13 @@ typedef int16_t PTD_INT16;
 /* ----------- Objective-C ----------- */
 #elif __objectivec
 
-typedef Uint32 PTD_UINT32;
-typedef Uint16 PTD_UINT16;
-typedef Uint8  PTD_UINT8;
-typedef Int16 PTD_INT16;
+typedef UInt32 PTD_UINT32;
+typedef UInt16 PTD_UINT16;
+typedef UInt8  PTD_UINT8;
+typedef SInt16 PTD_INT16;
 
+#else
+#error define a platform/language that you are building for
 #endif
 
 
