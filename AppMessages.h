@@ -66,6 +66,7 @@
 #define  MSG_MIN_LEN_DB_COUNTER         (0)
 #define  MSG_MIN_LEN_DB_E2E_LOOPBACK    (0)
 #define  MSG_MIN_LEN_DB_PTM             (0)
+#define  MSG_MIN_LEN_ER_SERIAL          (2)
 
 // Message IDs: Major only
 typedef enum
@@ -75,6 +76,7 @@ typedef enum
   MSG_ID_MAJOR_BOOTLOADER = 0x10,
   MSG_ID_MAJOR_CC = 0x20,
   MSG_ID_MAJOR_ARDUINO = 0x30,
+  MSG_ID_MAJOR_ERROR = 0x40,
   MSG_ID_MAJOR_DEBUG = 0xFE
 } MSG_ID_MAJOR_T;
 
@@ -103,10 +105,11 @@ typedef enum
   MSG_ID_CC_ACCEL_READ      = 0x2010,
   MSG_ID_CC_TEMP_READ       = 0x2011,
   MSG_ID_AR_SLEEP           = 0x3000,
+  MSG_ID_ERROR_CC           = 0x4000,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
   MSG_ID_DB_COUNTER         = 0xFE01,
   MSG_ID_DB_E2E_LOOPBACK    = 0xFE02,
-  MSG_ID_DB_PTM             = 0xFE03
+  MSG_ID_DB_PTM             = 0xFE03,
 } MSG_ID_T;
 
 typedef enum
@@ -123,6 +126,19 @@ typedef enum {
    TXPOWER_NEG6DB,
    TXPOWER_NEG23DB,
 } BT_TXPOWER_DB_T;
+
+typedef enum {
+  ERROR_ID_CC_SERIAL_HEADER     = 0x0001
+} ERROR_CODES_T;
+
+#define ERROR_MSG_PAYLOAD_SIZE_MAX 10
+#define ERROR_
+typedef struct
+{
+  PTD_UINT16 errorCode;
+  PTD_UINT8 payloadSize;
+  PTD_UINT8 payload[ ERROR_MSG_PAYLOAD_SIZE_MAX ];
+} ERROR_MSG_T;
 
 typedef struct {
   PTD_UINT16 adv_int;
