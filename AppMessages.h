@@ -140,12 +140,14 @@ typedef struct
   PTD_UINT8 payload[ ERROR_MSG_PAYLOAD_SIZE_MAX ];
 } ERROR_MSG_T;
 
+#define MAX_LOCAL_NAME_SIZE 20
+
+
 typedef struct {
   PTD_UINT16 adv_int;
   PTD_UINT16 conn_int;
   PTD_UINT8 power;
-  // Name might get dropped.  TBD...
-  PTD_UINT8 local_name[20];
+  PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
   PTD_UINT8 local_name_size;
 } BT_RADIOCONFIG_T;
 
