@@ -252,7 +252,11 @@ typedef enum
 #define BL_CRC_FIELD_SIZE (4)
 #define MAX_SKETCH_NAME_SIZE (20)
 
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
 typedef struct
+#endif
 {
   PTD_UINT32 hexSize;
   PTD_UINT32 hexCrc;
