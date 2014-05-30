@@ -267,19 +267,31 @@ typedef struct
   PTD_UINT8 hexName[MAX_SKETCH_NAME_SIZE];
 } BL_SKETCH_META_DATA_T;
 
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
 typedef struct
+#endif
 {
   BL_SKETCH_META_DATA_T metaData;
 } BL_MSG_CMD_START_T;
 
 
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
 typedef struct
+#endif
 {
   PTD_UINT16 fwAddress;
   PTD_UINT8 * fwBlock;
 } BL_MSG_FW_BLOCK_T;
 
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
 typedef struct
+#endif
 {
   PTD_UINT8 hlState;  // BL_HL_STATE_T
   PTD_UINT8 intState; // BL_STATE_T
