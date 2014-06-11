@@ -61,6 +61,7 @@
 #define  MSG_MIN_LEN_CC_LED_READ_ALL    (0)
 #define  MSG_MIN_LEN_CC_ACCEL_READ      (0)
 #define  MSG_MIN_LEN_CC_TEMP_READ       (0)
+#define  MSG_MIN_LEN_CC_BATT_READ       (0)
 #define  MSG_MIN_LEN_AR_SLEEP           (4)
 #define  MSG_MIN_LEN_DB_LOOPBACK        (0)
 #define  MSG_MIN_LEN_DB_COUNTER         (0)
@@ -104,6 +105,7 @@ typedef enum
   MSG_ID_CC_LED_READ_ALL    = 0x2002,
   MSG_ID_CC_ACCEL_READ      = 0x2010,
   MSG_ID_CC_TEMP_READ       = 0x2011,
+  MSG_ID_CC_BATT_READ       = 0x2015,
   MSG_ID_AR_SLEEP           = 0x3000,
   MSG_ID_ERROR_CC           = 0x4000,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
