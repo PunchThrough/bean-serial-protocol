@@ -165,6 +165,7 @@ typedef enum
   ADV_IBEACON
 } ADV_MODE_T;
 
+#define NEW_RADIO_CONFIG
 #ifdef NEW_RADIO_CONFIG
 typedef struct 
 {
