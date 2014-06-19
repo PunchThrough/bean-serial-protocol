@@ -136,12 +136,12 @@ typedef enum
 } PTM_MSG_ID_T;
 
 // Message Body Structs
-//Radio
+// This was backwards in older releases prior to 201406130002
 typedef enum {
-   TXPOWER_4DB = 0x00,
-   TXPOWER_0DB,
+   TXPOWER_NEG23DB = 0x00,
    TXPOWER_NEG6DB,
-   TXPOWER_NEG23DB,
+   TXPOWER_0DB,
+   TXPOWER_4DB
 } BT_TXPOWER_DB_T;
 
 typedef enum {
@@ -159,7 +159,27 @@ typedef struct
 
 #define MAX_LOCAL_NAME_SIZE 20
 
+typedef enum
+{
+  ADV_STANDARD = 0x00,
+  ADV_IBEACON
+} ADV_MODE_T;
 
+#ifdef NEW_RADIO_CONFIG
+typedef struct 
+{
+  PTD_UINT16 adv_int;
+  PTD_UINT16 conn_int;
+  PTD_UINT8 power;
+  PTD_UINT8 adv_mode;
+  PTD_UINT16 ibeacon_uuid;
+  PTD_UINT16 ibeacon_major;
+  PTD_UINT16 ibeacon_minor;
+  PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
+  PTD_UINT8 local_name_size;
+} BT_RADIOCONFIG_T;
+
+#else
 typedef struct {
   PTD_UINT16 adv_int;
   PTD_UINT16 conn_int;
@@ -167,6 +187,8 @@ typedef struct {
   PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
   PTD_UINT8 local_name_size;
 } BT_RADIOCONFIG_T;
+
+#endif
 
 typedef struct {
   PTD_UINT8 number;
