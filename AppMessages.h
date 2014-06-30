@@ -170,9 +170,13 @@ typedef enum
 } ADV_MODE_T;
 
 #define NEW_RADIO_CONFIG
-#ifdef NEW_RADIO_CONFIG
-typedef struct 
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
 {
+#ifdef NEW_RADIO_CONFIG
   PTD_UINT16 adv_int;
   PTD_UINT16 conn_int;
   PTD_UINT8 power;
@@ -182,18 +186,15 @@ typedef struct
   PTD_UINT16 ibeacon_minor;
   PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
   PTD_UINT8 local_name_size;
-} BT_RADIOCONFIG_T;
-
 #else
-typedef struct {
   PTD_UINT16 adv_int;
   PTD_UINT16 conn_int;
   PTD_UINT8 power;
   PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
   PTD_UINT8 local_name_size;
+#endif
 } BT_RADIOCONFIG_T;
 
-#endif
 
 typedef struct {
   PTD_UINT8 number;
