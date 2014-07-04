@@ -63,6 +63,7 @@
 #define  MSG_MIN_LEN_BT_SET_PIN         (2)
 #define  MSG_MIN_LEN_BT_SET_TX_PWR      (1)
 #define  MSG_MIN_LEN_BT_GET_CONFIG      (0)
+#define  MSG_MIN_LEN_BT_SET_CONFIG      (sizeof(BT_RADIOCONFIG_T))
 #define  MSG_MIN_LEN_BT_ADV_ONOFF       (1)
 #define  MSG_MIN_LEN_BT_SET_SCRATCH     (2)
 #define  MSG_MIN_LEN_BT_GET_SCRATCH     (1)
@@ -176,7 +177,6 @@ typedef struct __attribute__((packed))
 typedef struct
 #endif
 {
-#ifdef NEW_RADIO_CONFIG
   PTD_UINT16 adv_int;
   PTD_UINT16 conn_int;
   PTD_UINT8 power;
@@ -186,13 +186,6 @@ typedef struct
   PTD_UINT16 ibeacon_minor;
   PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
   PTD_UINT8 local_name_size;
-#else
-  PTD_UINT16 adv_int;
-  PTD_UINT16 conn_int;
-  PTD_UINT8 power;
-  PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
-  PTD_UINT8 local_name_size;
-#endif
 } BT_RADIOCONFIG_T;
 
 
