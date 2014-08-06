@@ -212,11 +212,25 @@ typedef struct {
    PTD_UINT8 sensitivity;
 } ACC_READING_T;
 
-typedef struct {
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
   PTD_UINT8 axis;
   PTD_INT16 reading;
   PTD_UINT8 sensitivity;  //actual value: 2,4,8, or 16
 } ACC_AXES_READING_T;
+
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
+  PTD_UINT8 range;
+} ACC_RANGE_SET_T;
 
 //LED
 typedef struct {
