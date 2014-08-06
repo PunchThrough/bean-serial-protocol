@@ -64,7 +64,7 @@
 #define  MSG_MIN_LEN_BT_SET_TX_PWR      (1)
 #define  MSG_MIN_LEN_BT_GET_CONFIG      (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG      (sizeof(BT_RADIOCONFIG_T))
-#define  MSG_MIN_LEN_BT_ADV_ONOFF       (1)
+#define  MSG_MIN_LEN_BT_ADV_ONOFF       (sizeof(BT_ADV_ONOFF_T))
 #define  MSG_MIN_LEN_BT_SET_SCRATCH     (2)
 #define  MSG_MIN_LEN_BT_GET_SCRATCH     (1)
 #define  MSG_MIN_LEN_BT_RESTART         (0)
@@ -256,6 +256,17 @@ typedef struct {
   PTD_UINT16 delay_ms;
 } AR_PWR_SET_T;
 
+
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
+  PTD_UINT32 adv_timer;
+  PTD_UINT8 adv_onOff;
+} BT_ADV_ONOFF_T;
+  
 
 // Bootloader states (substates)
 typedef enum
