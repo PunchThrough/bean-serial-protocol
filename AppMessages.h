@@ -80,6 +80,8 @@
 #define  MSG_MIN_LEN_CC_BATT_READ       (0)
 #define  MSG_MIN_LEN_CC_POWER_ARDUINO   (1)
 #define  MSG_MIN_LEN_CC_GET_AR_POWER    (0)
+#define  MSG_MIN_LEN_CC_ACCEL_GET_RANGE (sizeof(MSG_ID_CC_ACCEL_GET_RANGE))
+#define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE (sizeof(MSG_ID_CC_ACCEL_SET_RANGE))
 #define  MSG_MIN_LEN_AR_SLEEP           (4)
 #define  MSG_MIN_LEN_DB_LOOPBACK        (0)
 #define  MSG_MIN_LEN_DB_COUNTER         (0)
@@ -126,6 +128,8 @@ typedef enum
   MSG_ID_CC_BATT_READ       = 0x2015,
   MSG_ID_CC_POWER_ARDUINO   = 0x2020,
   MSG_ID_CC_GET_AR_POWER    = 0x2021,
+  MSG_ID_CC_ACCEL_GET_RANGE = 0x2030,
+  MSG_ID_CC_ACCEL_SET_RANGE = 0x2035,
   MSG_ID_AR_SLEEP           = 0x3000,
   MSG_ID_ERROR_CC           = 0x4000,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
@@ -205,11 +209,13 @@ typedef struct {
    PTD_INT16 xAxis;
    PTD_INT16 yAxis;
    PTD_INT16 zAxis;
+   PTD_UINT8 sensitivity;
 } ACC_READING_T;
 
 typedef struct {
   PTD_UINT8 axis;
   PTD_INT16 reading;
+  PTD_UINT8 sensitivity;  //actual value: 2,4,8, or 16
 } ACC_AXES_READING_T;
 
 //LED
@@ -286,6 +292,7 @@ typedef enum
   BL_CMD_VERIFY     = 0x01,
   BL_CMD_RESET      = 0x02
 } BL_CMD_T;
+
 
 // Bootloader Message Definitions
 #define BL_HEX_FIELD_SIZE (4)
