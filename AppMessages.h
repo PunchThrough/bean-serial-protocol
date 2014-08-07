@@ -67,6 +67,7 @@
 #define  MSG_MIN_LEN_BT_ADV_ONOFF       (sizeof(BT_ADV_ONOFF_T))
 #define  MSG_MIN_LEN_BT_SET_SCRATCH     (2)
 #define  MSG_MIN_LEN_BT_GET_SCRATCH     (1)
+#define  MSG_MIN_LEN_BT_GET_STATES      (0)
 #define  MSG_MIN_LEN_BT_RESTART         (0)
 #define  MSG_MIN_LEN_BL_CMD_START       (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK        (0)
@@ -116,6 +117,7 @@ typedef enum
   MSG_ID_BT_SET_SCRATCH     = 0x0514,
   MSG_ID_BT_GET_SCRATCH     = 0x0515,
   MSG_ID_BT_RESTART         = 0x0520,
+  MSG_ID_BT_GET_STATES      = 0x0530,
   MSG_ID_BL_CMD_START       = 0x1000,
   MSG_ID_BL_FW_BLOCK        = 0x1001,
   MSG_ID_BL_STATUS          = 0x1002,
@@ -192,6 +194,15 @@ typedef struct
   PTD_UINT8 local_name_size;
 } BT_RADIOCONFIG_T;
 
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
+  PTD_UINT8 conn_state;
+  PTD_UINT8 adv_state;
+} BT_STATES_T; 
 
 typedef struct {
   PTD_UINT8 number;
