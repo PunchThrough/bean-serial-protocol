@@ -261,11 +261,6 @@ typedef struct {
   PTD_UINT8 intensity;
 } LED_IND_SETTING_T;
 
-// Arduino Power
-typedef struct {
-  PTD_UINT8 isOn;
-  PTD_UINT16 delay_ms;
-} AR_PWR_SET_T;
 
 
 #ifdef __objectivec
