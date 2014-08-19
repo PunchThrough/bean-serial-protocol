@@ -216,11 +216,16 @@ typedef enum {
   ACC_AXIS_Z,
 } ACC_AXIS_T;
 
-typedef struct {
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
    PTD_INT16 xAxis;
    PTD_INT16 yAxis;
    PTD_INT16 zAxis;
-   PTD_UINT8 sensitivity;
+   PTD_UINT8 sensitivity;  //actual value: 2,4,8, or 16 g/512LSB
 } ACC_READING_T;
 
 #ifdef __objectivec
@@ -231,7 +236,7 @@ typedef struct
 {
   PTD_UINT8 axis;
   PTD_INT16 reading;
-  PTD_UINT8 sensitivity;  //actual value: 2,4,8, or 16
+  PTD_UINT8 sensitivity;  //actual value: 2,4,8, or 16 g/512LSB
 } ACC_AXES_READING_T;
 
 #ifdef __objectivec
@@ -240,7 +245,7 @@ typedef struct __attribute__((packed))
 typedef struct
 #endif
 {
-  PTD_UINT8 range;
+  PTD_UINT8 range;   //actual value: 2,4,8, or 16 g/512LSB
 } ACC_RANGE_SET_T;
 
 //LED
