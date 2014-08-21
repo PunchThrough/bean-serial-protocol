@@ -84,6 +84,7 @@
 #define  MSG_MIN_LEN_CC_ACCEL_GET_RANGE (0)
 #define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE (1)
 #define  MSG_MIN_LEN_AR_SLEEP           (4)
+#define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT (1)
 #define  MSG_MIN_LEN_DB_LOOPBACK        (0)
 #define  MSG_MIN_LEN_DB_COUNTER         (0)
 #define  MSG_MIN_LEN_DB_E2E_LOOPBACK    (0)
@@ -133,6 +134,7 @@ typedef enum
   MSG_ID_CC_ACCEL_GET_RANGE = 0x2030,
   MSG_ID_CC_ACCEL_SET_RANGE = 0x2035,
   MSG_ID_AR_SLEEP           = 0x3000,
+  MSG_ID_AR_WAKE_ON_CONNECT = 0x3010,
   MSG_ID_ERROR_CC           = 0x4000,
   MSG_ID_DB_LOOPBACK        = 0xFE00,
   MSG_ID_DB_COUNTER         = 0xFE01,
