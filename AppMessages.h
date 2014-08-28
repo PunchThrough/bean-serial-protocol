@@ -60,7 +60,7 @@
 #define  MSG_MIN_LEN_BT_SET_ADV         (2)
 #define  MSG_MIN_LEN_BT_SET_CONN        (2)
 #define  MSG_MIN_LEN_BT_SET_LOCAL_NAME  (1)
-#define  MSG_MIN_LEN_BT_SET_PIN         (2)
+#define  MSG_MIN_LEN_BT_SET_PIN         (3)
 #define  MSG_MIN_LEN_BT_SET_TX_PWR      (1)
 #define  MSG_MIN_LEN_BT_GET_CONFIG      (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG      (sizeof(BT_RADIOCONFIG_T))
@@ -177,6 +177,16 @@ typedef enum
   ADV_STANDARD = 0x00,
   ADV_IBEACON
 } ADV_MODE_T;
+
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
+  PTD_UINT32 pinCode;
+  PTD_UINT8 pincodeActive;
+} BT_SET_PIN_T;
 
 #define NEW_RADIO_CONFIG
 #ifdef __objectivec
