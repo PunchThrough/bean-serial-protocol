@@ -56,41 +56,41 @@
 #define HDLC_ESCAPE_XOR (0x20)
 
 // Minimum message payload lengths sans header size
-#define  MSG_MIN_LEN_SERIAL_DATA        (0)
-#define  MSG_MIN_LEN_BT_SET_ADV         (2)
-#define  MSG_MIN_LEN_BT_SET_CONN        (2)
-#define  MSG_MIN_LEN_BT_SET_LOCAL_NAME  (1)
-#define  MSG_MIN_LEN_BT_SET_PIN         (3)
-#define  MSG_MIN_LEN_BT_SET_TX_PWR      (1)
-#define  MSG_MIN_LEN_BT_GET_CONFIG      (0)
-#define  MSG_MIN_LEN_BT_SET_CONFIG      (sizeof(BT_RADIOCONFIG_T))
-#define  MSG_MIN_LEN_BT_ADV_ONOFF       (sizeof(BT_ADV_ONOFF_T))
-#define  MSG_MIN_LEN_BT_SET_SCRATCH     (2)
-#define  MSG_MIN_LEN_BT_GET_SCRATCH     (1)
-#define  MSG_MIN_LEN_BT_GET_STATES      (0)
-#define  MSG_MIN_LEN_BT_RESTART         (0)
-#define  MSG_MIN_LEN_BT_SAVE_CONFIG     (1)
-#define  MSG_MIN_LEN_BL_CMD_START       (1)
-#define  MSG_MIN_LEN_BL_FW_BLOCK        (0)
-#define  MSG_MIN_LEN_BL_STATUS          (0)
-#define  MSG_MIN_LEN_BL_GET_META        (0)
-#define  MSG_MIN_LEN_CC_LED_WRITE       (2)
-#define  MSG_MIN_LEN_CC_LED_WRITE_ALL   (3)
-#define  MSG_MIN_LEN_CC_LED_READ_ALL    (0)
-#define  MSG_MIN_LEN_CC_ACCEL_READ      (0)
-#define  MSG_MIN_LEN_CC_TEMP_READ       (0)
-#define  MSG_MIN_LEN_CC_BATT_READ       (0)
-#define  MSG_MIN_LEN_CC_POWER_ARDUINO   (1)
-#define  MSG_MIN_LEN_CC_GET_AR_POWER    (0)
-#define  MSG_MIN_LEN_CC_ACCEL_GET_RANGE (0)
-#define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE (1)
-#define  MSG_MIN_LEN_AR_SLEEP           (4)
-#define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT (1)
-#define  MSG_MIN_LEN_DB_LOOPBACK        (0)
-#define  MSG_MIN_LEN_DB_COUNTER         (0)
-#define  MSG_MIN_LEN_DB_E2E_LOOPBACK    (0)
-#define  MSG_MIN_LEN_DB_PTM             (0)
-#define  MSG_MIN_LEN_ER_SERIAL          (2)
+#define  MSG_MIN_LEN_SERIAL_DATA                (0)
+#define  MSG_MIN_LEN_BT_SET_ADV                 (2)
+#define  MSG_MIN_LEN_BT_SET_CONN                (2)
+#define  MSG_MIN_LEN_BT_SET_LOCAL_NAME          (1)
+#define  MSG_MIN_LEN_BT_SET_PIN                 (3)
+#define  MSG_MIN_LEN_BT_SET_TX_PWR              (1)
+#define  MSG_MIN_LEN_BT_GET_CONFIG              (0)
+#define  MSG_MIN_LEN_BT_SET_CONFIG              (sizeof(BT_RADIOCONFIG_T))
+#define  MSG_MIN_LEN_BT_ADV_ONOFF               (sizeof(BT_ADV_ONOFF_T))
+#define  MSG_MIN_LEN_BT_SET_SCRATCH             (2)
+#define  MSG_MIN_LEN_BT_GET_SCRATCH             (1)
+#define  MSG_MIN_LEN_BT_GET_STATES              (0)
+#define  MSG_MIN_LEN_BT_RESTART                 (0)
+#define  MSG_MIN_LEN_BT_SET_CONFIG_NOSAVE       (sizeof(BT_RADIOCONFIG_T))
+#define  MSG_MIN_LEN_BL_CMD_START               (1)
+#define  MSG_MIN_LEN_BL_FW_BLOCK                (0)
+#define  MSG_MIN_LEN_BL_STATUS                  (0)
+#define  MSG_MIN_LEN_BL_GET_META                (0)
+#define  MSG_MIN_LEN_CC_LED_WRITE               (2)
+#define  MSG_MIN_LEN_CC_LED_WRITE_ALL           (3)
+#define  MSG_MIN_LEN_CC_LED_READ_ALL            (0)
+#define  MSG_MIN_LEN_CC_ACCEL_READ              (0)
+#define  MSG_MIN_LEN_CC_TEMP_READ               (0)
+#define  MSG_MIN_LEN_CC_BATT_READ               (0)
+#define  MSG_MIN_LEN_CC_POWER_ARDUINO           (1)
+#define  MSG_MIN_LEN_CC_GET_AR_POWER            (0)
+#define  MSG_MIN_LEN_CC_ACCEL_GET_RANGE         (0)
+#define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE         (1)
+#define  MSG_MIN_LEN_AR_SLEEP                   (4)
+#define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
+#define  MSG_MIN_LEN_DB_LOOPBACK                (0)
+#define  MSG_MIN_LEN_DB_COUNTER                 (0)
+#define  MSG_MIN_LEN_DB_E2E_LOOPBACK            (0)
+#define  MSG_MIN_LEN_DB_PTM                     (0)
+#define  MSG_MIN_LEN_ER_SERIAL                  (2)
 
 // Message IDs: Major only
 typedef enum
@@ -107,41 +107,41 @@ typedef enum
 // Message IDs
 typedef enum
 {
-  MSG_ID_SERIAL_DATA        = 0x0000,
-  MSG_ID_BT_SET_ADV         = 0x0500,
-  MSG_ID_BT_SET_CONN        = 0x0502,
-  MSG_ID_BT_SET_LOCAL_NAME  = 0x0504,
-  MSG_ID_BT_SET_PIN         = 0x0506,
-  MSG_ID_BT_SET_TX_PWR      = 0x0508,
-  MSG_ID_BT_GET_CONFIG      = 0x0510,
-  MSG_ID_BT_SET_CONFIG      = 0x0511,
-  MSG_ID_BT_ADV_ONOFF       = 0x0512,
-  MSG_ID_BT_SET_SCRATCH     = 0x0514,
-  MSG_ID_BT_GET_SCRATCH     = 0x0515,
-  MSG_ID_BT_RESTART         = 0x0520,
-  MSG_ID_BT_GET_STATES      = 0x0530,
-  MSG_ID_BT_SAVE_CONFIG     = 0x0540,
-  MSG_ID_BL_CMD_START       = 0x1000,
-  MSG_ID_BL_FW_BLOCK        = 0x1001,
-  MSG_ID_BL_STATUS          = 0x1002,
-  MSG_ID_BL_GET_META        = 0x1003,
-  MSG_ID_CC_LED_WRITE       = 0x2000,
-  MSG_ID_CC_LED_WRITE_ALL   = 0x2001,
-  MSG_ID_CC_LED_READ_ALL    = 0x2002,
-  MSG_ID_CC_ACCEL_READ      = 0x2010,
-  MSG_ID_CC_TEMP_READ       = 0x2011,
-  MSG_ID_CC_BATT_READ       = 0x2015,
-  MSG_ID_CC_POWER_ARDUINO   = 0x2020,
-  MSG_ID_CC_GET_AR_POWER    = 0x2021,
-  MSG_ID_CC_ACCEL_GET_RANGE = 0x2030,
-  MSG_ID_CC_ACCEL_SET_RANGE = 0x2035,
-  MSG_ID_AR_SLEEP           = 0x3000,
-  MSG_ID_AR_WAKE_ON_CONNECT = 0x3010,
-  MSG_ID_ERROR_CC           = 0x4000,
-  MSG_ID_DB_LOOPBACK        = 0xFE00,
-  MSG_ID_DB_COUNTER         = 0xFE01,
-  MSG_ID_DB_E2E_LOOPBACK    = 0xFE02,
-  MSG_ID_DB_PTM             = 0xFE03,
+  MSG_ID_SERIAL_DATA           = 0x0000,
+  MSG_ID_BT_SET_ADV            = 0x0500,
+  MSG_ID_BT_SET_CONN           = 0x0502,
+  MSG_ID_BT_SET_LOCAL_NAME     = 0x0504,
+  MSG_ID_BT_SET_PIN            = 0x0506,
+  MSG_ID_BT_SET_TX_PWR         = 0x0508,
+  MSG_ID_BT_GET_CONFIG         = 0x0510,
+  MSG_ID_BT_SET_CONFIG         = 0x0511,
+  MSG_ID_BT_ADV_ONOFF          = 0x0512,
+  MSG_ID_BT_SET_SCRATCH        = 0x0514,
+  MSG_ID_BT_GET_SCRATCH        = 0x0515,
+  MSG_ID_BT_RESTART            = 0x0520,
+  MSG_ID_BT_GET_STATES         = 0x0530,
+  MSG_ID_BT_SET_CONFIG_NOSAVE  = 0x0540,
+  MSG_ID_BL_CMD_START          = 0x1000,
+  MSG_ID_BL_FW_BLOCK           = 0x1001,
+  MSG_ID_BL_STATUS             = 0x1002,
+  MSG_ID_BL_GET_META           = 0x1003,
+  MSG_ID_CC_LED_WRITE          = 0x2000,
+  MSG_ID_CC_LED_WRITE_ALL      = 0x2001,
+  MSG_ID_CC_LED_READ_ALL       = 0x2002,
+  MSG_ID_CC_ACCEL_READ         = 0x2010,
+  MSG_ID_CC_TEMP_READ          = 0x2011,
+  MSG_ID_CC_BATT_READ          = 0x2015,
+  MSG_ID_CC_POWER_ARDUINO      = 0x2020,
+  MSG_ID_CC_GET_AR_POWER       = 0x2021,
+  MSG_ID_CC_ACCEL_GET_RANGE    = 0x2030,
+  MSG_ID_CC_ACCEL_SET_RANGE    = 0x2035,
+  MSG_ID_AR_SLEEP              = 0x3000,
+  MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
+  MSG_ID_ERROR_CC              = 0x4000,
+  MSG_ID_DB_LOOPBACK           = 0xFE00,
+  MSG_ID_DB_COUNTER            = 0xFE01,
+  MSG_ID_DB_E2E_LOOPBACK       = 0xFE02,
+  MSG_ID_DB_PTM                = 0xFE03,
 } MSG_ID_T;
 
 typedef enum
@@ -207,15 +207,6 @@ typedef struct
   PTD_UINT8 local_name[MAX_LOCAL_NAME_SIZE];
   PTD_UINT8 local_name_size;
 } BT_RADIOCONFIG_T;
-
-#ifdef __objectivec
-typedef struct __attribute__((packed))
-#else
-typedef struct
-#endif
-{
-  PTD_UINT8 saveConfig;
-} BT_SAVE_CONFIG_T;
 
 
 #ifdef __objectivec
