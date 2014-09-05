@@ -174,10 +174,14 @@ typedef struct
 
 #define MAX_LOCAL_NAME_SIZE 20
 
+#define ADV_MODE_BEAN_AUTH_SET 0x80
+
 typedef enum
 {
   ADV_STANDARD = 0x00,
-  ADV_IBEACON
+  ADV_IBEACON = 0x01,
+  ADV_STANDARD_AUTH = 0x80,
+  ADV_IBEACON_AUTH = 0x81
 } ADV_MODE_T;
 
 #ifdef __objectivec
