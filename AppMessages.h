@@ -69,6 +69,7 @@
 #define  MSG_MIN_LEN_BT_GET_SCRATCH             (1)
 #define  MSG_MIN_LEN_BT_GET_STATES              (0)
 #define  MSG_MIN_LEN_BT_RESTART                 (0)
+#define  MSG_MIN_LEN_BT_DISCONNECT              (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG_NOSAVE       (sizeof(BT_RADIOCONFIG_T))
 #define  MSG_MIN_LEN_BT_END_GATE                (0)
 #define  MSG_MIN_LEN_BL_CMD_START               (1)
@@ -120,6 +121,7 @@ typedef enum
   MSG_ID_BT_SET_SCRATCH        = 0x0514,
   MSG_ID_BT_GET_SCRATCH        = 0x0515,
   MSG_ID_BT_RESTART            = 0x0520,
+  MSG_ID_BT_DISCONNECT         = 0x0521,
   MSG_ID_BT_GET_STATES         = 0x0530,
   MSG_ID_BT_SET_CONFIG_NOSAVE  = 0x0540,
   MSG_ID_BT_END_GATE           = 0x0550,
