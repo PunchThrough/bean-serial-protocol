@@ -35,14 +35,7 @@
 
 #include "AppMessageTypes.h"
 
-// GATT Services
-//Switchable GATT definitions
-#define ADV_SWITCH_STANDARD 0
-#define ADV_SWITCH_HID 1
-#define ADV_SWITCH_MIDI 2
-#define ADV_SWITCH_ANCS 3
-#define ADV_SWITCH_OBSERVER 4
-#define ADV_SWITCH_SIZE 5 //increment this if any services are added!
+
 
 // Serial Message Defines and Types
 #define APP_MSG_MAX_LENGTH         (66)
@@ -97,6 +90,7 @@
 #define  MSG_MIN_LEN_CC_GET_AR_POWER            (0)
 #define  MSG_MIN_LEN_CC_ACCEL_GET_RANGE         (0)
 #define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE         (1)
+#define  MSG_MIN_LEN_CC_MIDI_WRITE              (3)
 #define  MSG_MIN_LEN_AR_SLEEP                   (4)
 #define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
 #define  MSG_MIN_LEN_DB_LOOPBACK                (0)
@@ -152,6 +146,8 @@ typedef enum
   MSG_ID_CC_ACCEL_SET_RANGE    = 0x2035,
   MSG_ID_CC_SET_GATT           = 0x2036,
   MSG_ID_CC_GET_GATT           = 0x2037,
+  MSG_ID_CC_MIDI_WRITE         = 0x2038,
+  MSG_ID_CC_MIDI_READ          = 0x2039,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
   MSG_ID_ERROR_CC              = 0x4000,
@@ -163,6 +159,19 @@ typedef enum
 
 //accessible gatt service values
 extern uint8 GATTServiceEnabled[];
+
+// GATT Services
+//Switchable GATT definitions
+typedef enum
+{
+ ADV_SWITCH_STANDARD = 0,
+ ADV_SWITCH_HID = 1,
+ ADV_SWITCH_MIDI = 2,
+ ADV_SWITCH_ANCS = 3,
+ ADV_SWITCH_OBSERVER = 4,
+ ADV_SWITCH_SIZE = 5 //increment this if any services are added!
+} ADV_SWITCH_T;
+
 
 typedef enum
 {
