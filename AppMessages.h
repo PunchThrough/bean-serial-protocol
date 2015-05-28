@@ -35,6 +35,15 @@
 
 #include "AppMessageTypes.h"
 
+// GATT Services
+//Switchable GATT definitions
+#define ADV_SWITCH_STANDARD 0
+#define ADV_SWITCH_HID 1
+#define ADV_SWITCH_MIDI 2
+#define ADV_SWITCH_ANCS 3
+#define ADV_SWITCH_OBSERVER 4
+#define ADV_SWITCH_SIZE 5 //increment this if any services are added!
+
 // Serial Message Defines and Types
 #define APP_MSG_MAX_LENGTH         (66)
 #define APP_MSG_RESPONSE_BIT       (0x80)
@@ -72,6 +81,8 @@
 #define  MSG_MIN_LEN_BT_DISCONNECT              (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG_NOSAVE       (sizeof(BT_RADIOCONFIG_T))
 #define  MSG_MIN_LEN_BT_END_GATE                (0)
+#define  MSG_MIN_LEN_CC_SET_GATT                (2)
+#define  MSG_MIN_LEN_CC_GET_GATT                (0)
 #define  MSG_MIN_LEN_BL_CMD_START               (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK                (0)
 #define  MSG_MIN_LEN_BL_STATUS                  (0)
@@ -139,6 +150,8 @@ typedef enum
   MSG_ID_CC_GET_AR_POWER       = 0x2021,
   MSG_ID_CC_ACCEL_GET_RANGE    = 0x2030,
   MSG_ID_CC_ACCEL_SET_RANGE    = 0x2035,
+  MSG_ID_CC_SET_GATT           = 0x2036,
+  MSG_ID_CC_GET_GATT           = 0x2037,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
   MSG_ID_ERROR_CC              = 0x4000,
@@ -147,6 +160,9 @@ typedef enum
   MSG_ID_DB_E2E_LOOPBACK       = 0xFE02,
   MSG_ID_DB_PTM                = 0xFE03,
 } MSG_ID_T;
+
+//accessible gatt service values
+extern uint8 GATTServiceEnabled[];
 
 typedef enum
 {
