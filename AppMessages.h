@@ -74,7 +74,7 @@
 #define  MSG_MIN_LEN_BT_DISCONNECT              (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG_NOSAVE       (sizeof(BT_RADIOCONFIG_T))
 #define  MSG_MIN_LEN_BT_END_GATE                (0)
-#define  MSG_MIN_LEN_CC_SET_GATT                (2)
+#define  MSG_MIN_LEN_CC_SET_GATT                (sizeof(ADV_SWITCH_ENABLED_T))
 #define  MSG_MIN_LEN_CC_GET_GATT                (0)
 #define  MSG_MIN_LEN_BL_CMD_START               (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK                (0)
@@ -157,9 +157,6 @@ typedef enum
   MSG_ID_DB_PTM                = 0xFE03,
 } MSG_ID_T;
 
-//accessible gatt service values
-extern uint8 GATTServiceEnabled[];
-
 // GATT Services
 //Switchable GATT definitions
 typedef enum
@@ -171,6 +168,15 @@ typedef enum
  ADV_SWITCH_OBSERVER = 4,
  ADV_SWITCH_SIZE = 5 //increment this if any services are added!
 } ADV_SWITCH_T;
+
+typedef struct 
+{
+  PTD_UINT8 standard;
+  PTD_UINT8 hid;
+  PTD_UINT8 midi;
+  PTD_UINT8 ancs;
+  PTD_UINT8 observer;
+} ADV_SWITCH_ENABLED_T;
 
 
 typedef enum
