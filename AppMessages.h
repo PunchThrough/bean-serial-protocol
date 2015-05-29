@@ -178,6 +178,9 @@ typedef struct
   PTD_UINT8 observer;
 } ADV_SWITCH_ENABLED_T;
 
+extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
+
+
 
 typedef enum
 {
