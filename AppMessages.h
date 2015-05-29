@@ -93,6 +93,7 @@
 #define  MSG_MIN_LEN_CC_MIDI_WRITE              (3)
 #define  MSG_MIN_LEN_AR_SLEEP                   (4)
 #define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
+#define  MSG_MIN_LEN_HID_SEND_REPORT            (sizeof(HID_REPORT_T))
 #define  MSG_MIN_LEN_DB_LOOPBACK                (0)
 #define  MSG_MIN_LEN_DB_COUNTER                 (0)
 #define  MSG_MIN_LEN_DB_E2E_LOOPBACK            (0)
@@ -107,6 +108,7 @@ typedef enum
   MSG_ID_MAJOR_BOOTLOADER = 0x10,
   MSG_ID_MAJOR_CC = 0x20,
   MSG_ID_MAJOR_ARDUINO = 0x30,
+  MSG_ID_MAJOR_HID = 0x35,
   MSG_ID_MAJOR_ERROR = 0x40,
   MSG_ID_MAJOR_DEBUG = 0xFE
 } MSG_ID_MAJOR_T;
@@ -150,6 +152,7 @@ typedef enum
   MSG_ID_CC_MIDI_READ          = 0x2039,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
+  MSG_ID_HID_SEND_REPORT       = 0x3500,
   MSG_ID_ERROR_CC              = 0x4000,
   MSG_ID_DB_LOOPBACK           = 0xFE00,
   MSG_ID_DB_COUNTER            = 0xFE01,
@@ -219,6 +222,7 @@ typedef enum
   ADV_STANDARD = 0x00,
   ADV_IBEACON = 0x01,
   ADV_STANDARD_AUTH = 0x80,
+  ADV_HID_KEYB     = 0x82, // HID always requires bonding
   ADV_IBEACON_AUTH = 0x81
 } ADV_MODE_T;
 
@@ -436,6 +440,20 @@ typedef struct
   PTD_UINT16 blocksSent;
   PTD_UINT16 bytesSent;
 } BL_MSG_STATUS_T;
+
+#define HID_DATA_LEN (8)
+
+#ifdef __objectivec
+typedef struct __attribute__((packed))
+#else
+typedef struct
+#endif
+{
+ PTD_UINT8 id;
+ PTD_UINT8 type;
+ PTD_UINT8 len;
+ PTD_UINT8 data[HID_DATA_LEN];
+} HID_REPORT_T;
 
 
 #endif
