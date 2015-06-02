@@ -74,8 +74,8 @@
 #define  MSG_MIN_LEN_BT_DISCONNECT              (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG_NOSAVE       (sizeof(BT_RADIOCONFIG_T))
 #define  MSG_MIN_LEN_BT_END_GATE                (0)
-#define  MSG_MIN_LEN_CC_SET_GATT                (sizeof(ADV_SWITCH_ENABLED_T))
-#define  MSG_MIN_LEN_CC_GET_GATT                (0)
+#define  MSG_MIN_LEN_GATT_SET_GATT                (sizeof(ADV_SWITCH_ENABLED_T))
+#define  MSG_MIN_LEN_GATT_GET_GATT                (0)
 #define  MSG_MIN_LEN_BL_CMD_START               (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK                (0)
 #define  MSG_MIN_LEN_BL_STATUS                  (0)
@@ -110,6 +110,7 @@ typedef enum
   MSG_ID_MAJOR_ARDUINO = 0x30,
   MSG_ID_MAJOR_HID = 0x35,
   MSG_ID_MAJOR_ERROR = 0x40,
+  MSG_ID_MAJOR_GATT = 0x45,
   MSG_ID_MAJOR_DEBUG = 0xFE
 } MSG_ID_MAJOR_T;
 
@@ -146,10 +147,10 @@ typedef enum
   MSG_ID_CC_GET_AR_POWER       = 0x2021,
   MSG_ID_CC_ACCEL_GET_RANGE    = 0x2030,
   MSG_ID_CC_ACCEL_SET_RANGE    = 0x2035,
-  MSG_ID_CC_SET_GATT           = 0x2036,
-  MSG_ID_CC_GET_GATT           = 0x2037,
   MSG_ID_CC_MIDI_WRITE         = 0x2038,
   MSG_ID_CC_MIDI_READ          = 0x2039,
+  MSG_ID_GATT_SET_GATT         = 0x4501,
+  MSG_ID_GATT_GET_GATT         = 0x4502,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
   MSG_ID_HID_SEND_REPORT       = 0x3500,
