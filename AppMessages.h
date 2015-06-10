@@ -111,6 +111,7 @@ typedef enum
   MSG_ID_MAJOR_HID = 0x35,
   MSG_ID_MAJOR_ERROR = 0x40,
   MSG_ID_MAJOR_GATT = 0x45,
+  MSG_ID_MAJOR_ANCS = 0x50,
   MSG_ID_MAJOR_DEBUG = 0xFE
 } MSG_ID_MAJOR_T;
 
@@ -151,6 +152,7 @@ typedef enum
   MSG_ID_CC_MIDI_READ          = 0x2039,
   MSG_ID_GATT_SET_GATT         = 0x4501,
   MSG_ID_GATT_GET_GATT         = 0x4502,
+  MSG_ID_ANCS_READ             = 0x5001,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
   MSG_ID_HID_SEND_REPORT       = 0x3500,
@@ -183,6 +185,76 @@ typedef struct
 } ADV_SWITCH_ENABLED_T;
 
 extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
+
+
+//ANCS
+
+typedef struct
+{
+  PTD_UINT8 cmdID;
+  PTD_UINT32 notifUID;
+  PTD_UINT8 attr;                   // assumes at most one attribute
+  PTD_UINT16 attrLength;            // if 0, ignored
+} ANCS_GET_NTF_T;
+
+typedef struct
+{
+  PTD_UINT8 eventID;
+  PTD_UINT8 flags;
+  PTD_UINT8 catID;
+  PTD_UINT8 catCount;
+  PTD_UINT32 notiUID;
+} ANCS_SOURCE_MSG_T;
+
+typedef enum
+{
+  EVT_FLAG_SILENT = (1 << 0),
+  EVT_FLAG_IMPORTANT = (1 << 1),
+  EVT_FLAG_PRE_EXISTING = (1 << 2),
+  EVT_FLAG_POSITIVE_ACTION = (1 << 3),
+  EVT_FLAG_NEGATIVE_ACTION = (1 << 4)
+}
+
+
+typedef enum
+{
+  EVT_ID_ADDED = 0,
+  EVT_ID_MOD = 1,
+  EVT_ID_REMOVED = 2
+} EVENT_ID_T;
+
+typedef enum
+{
+  CMD_ID_ATTR_NOTI = 0,
+  CMD_ID_ATTR_GET = 1
+} CMD_ID_T;
+
+typedef enum
+{
+  NOTI_ATTR_ID_APPID = 0,
+  NOTI_ATTR_ID_TITLE = 1, 
+  NOTI_ATTR_ID_SUBTITLE = 2, 
+  NOTI_ATTR_ID_MESSAGE = 3, 
+  NOTI_ATTR_ID_MSG_SIZE = 4,
+  NOTI_ATTR_ID_DATE = 5,
+} NOTI_ATTR_ID_T;
+
+typedef enum
+{
+  CAT_ID_OTHER = 0,
+  CAT_ID_INCOMING_CALL = 1,
+  CAT_ID_MISSED_CALL = 2,
+  CAT_ID_VOICEMAIL = 3,
+  CAT_ID_SOCIAL = 4,
+  CAT_ID_SCHEDULE = 5,
+  CAT_ID_EMAIL = 6,
+  CAT_ID_NEWS = 7,
+  CAT_ID_HEALTH = 8,
+  CAT_ID_BUSINESS = 9,
+  CAT_ID_LOCATION = 10,
+  CAT_ID_ENTERTAINMENT = 11
+} CAT_ID_T;
+
 
 
 
