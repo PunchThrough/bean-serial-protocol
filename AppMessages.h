@@ -74,8 +74,8 @@
 #define  MSG_MIN_LEN_BT_DISCONNECT              (0)
 #define  MSG_MIN_LEN_BT_SET_CONFIG_NOSAVE       (sizeof(BT_RADIOCONFIG_T))
 #define  MSG_MIN_LEN_BT_END_GATE                (0)
-#define  MSG_MIN_LEN_GATT_SET_GATT                (sizeof(ADV_SWITCH_ENABLED_T))
-#define  MSG_MIN_LEN_GATT_GET_GATT                (0)
+#define  MSG_MIN_LEN_GATT_SET_GATT              (sizeof(ADV_SWITCH_ENABLED_T))
+#define  MSG_MIN_LEN_GATT_GET_GATT              (0)
 #define  MSG_MIN_LEN_BL_CMD_START               (1)
 #define  MSG_MIN_LEN_BL_FW_BLOCK                (0)
 #define  MSG_MIN_LEN_BL_STATUS                  (0)
@@ -94,6 +94,7 @@
 #define  MSG_MIN_LEN_AR_SLEEP                   (4)
 #define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
 #define  MSG_MIN_LEN_HID_SEND_REPORT            (sizeof(HID_REPORT_T))
+#define  MSG_MIN_LEN_ANCS_GET_NOTI              (5)
 #define  MSG_MIN_LEN_DB_LOOPBACK                (0)
 #define  MSG_MIN_LEN_DB_COUNTER                 (0)
 #define  MSG_MIN_LEN_DB_E2E_LOOPBACK            (0)
@@ -153,6 +154,7 @@ typedef enum
   MSG_ID_GATT_SET_GATT         = 0x4501,
   MSG_ID_GATT_GET_GATT         = 0x4502,
   MSG_ID_ANCS_READ             = 0x5001,
+  MSG_ID_ANCS_GET_NOTI         = 0x5002,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
   MSG_ID_HID_SEND_REPORT       = 0x3500,
@@ -213,7 +215,7 @@ typedef enum
   EVT_FLAG_PRE_EXISTING = (1 << 2),
   EVT_FLAG_POSITIVE_ACTION = (1 << 3),
   EVT_FLAG_NEGATIVE_ACTION = (1 << 4)
-}
+} EVT_FLAG_T;
 
 
 typedef enum
