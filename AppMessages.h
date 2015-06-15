@@ -95,6 +95,7 @@
 #define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
 #define  MSG_MIN_LEN_HID_SEND_REPORT            (sizeof(HID_REPORT_T))
 #define  MSG_MIN_LEN_ANCS_GET_NOTI              (5)
+#define  MSG_MIN_LEN_MIDI_WRITE                 (3)
 #define  MSG_MIN_LEN_DB_LOOPBACK                (0)
 #define  MSG_MIN_LEN_DB_COUNTER                 (0)
 #define  MSG_MIN_LEN_DB_E2E_LOOPBACK            (0)
@@ -113,6 +114,7 @@ typedef enum
   MSG_ID_MAJOR_ERROR = 0x40,
   MSG_ID_MAJOR_GATT = 0x45,
   MSG_ID_MAJOR_ANCS = 0x50,
+  MSG_ID_MAJOR_MIDI = 0x55,
   MSG_ID_MAJOR_DEBUG = 0xFE
 } MSG_ID_MAJOR_T;
 
@@ -155,6 +157,8 @@ typedef enum
   MSG_ID_GATT_GET_GATT         = 0x4502,
   MSG_ID_ANCS_READ             = 0x5001,
   MSG_ID_ANCS_GET_NOTI         = 0x5002,
+  MSG_ID_MIDI_READ             = 0x5501,
+  MSG_ID_MIDI_WRITE            = 0x5502,
   MSG_ID_AR_SLEEP              = 0x3000,
   MSG_ID_AR_WAKE_ON_CONNECT    = 0x3010,
   MSG_ID_HID_SEND_REPORT       = 0x3500,
