@@ -175,7 +175,8 @@ typedef enum
  ADV_SWITCH_MIDI = 2,
  ADV_SWITCH_ANCS = 3,
  ADV_SWITCH_OBSERVER = 4,
- ADV_SWITCH_SIZE = 5 //increment this if any services are added!
+ ADV_SWITCH_IBEACON = 5,
+ ADV_SWITCH_SIZE = 6 //increment this if any services are added!
 } ADV_SWITCH_T;
 
 typedef struct 
@@ -185,6 +186,7 @@ typedef struct
   PTD_UINT8 midi;
   PTD_UINT8 ancs;
   PTD_UINT8 observer;
+  PTD_UINT8 ibeacon;
 } ADV_SWITCH_ENABLED_T;
 
 extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
