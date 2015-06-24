@@ -198,15 +198,16 @@ typedef struct
 extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
 
 //Observer
+#define B_ADDR_LEN 6
 
 typedef struct
 {
-  uint8 eventType;          //!< Advertisement Type: @ref GAP_ADVERTISEMENT_REPORT_TYPE_DEFINES
-  uint8 addrType;           //!< address type: @ref GAP_ADDR_TYPE_DEFINES
-  uint8 addr[B_ADDR_LEN];   //!< Address of the advertisement or SCAN_RSP
-  int8 rssi;                //!< Advertisement or SCAN_RSP RSSI
-  uint8 dataLen;            //!< Length (in bytes) of the data field (evtData)
-  uint8 advData[31];          //!< Data field of advertisement or SCAN_RSP (max of 3 bytes)
+  PTD_UINT8 eventType;          //!< Advertisement Type: @ref GAP_ADVERTISEMENT_REPORT_TYPE_DEFINES
+  PTD_UINT8 addrType;           //!< address type: @ref GAP_ADDR_TYPE_DEFINES
+  PTD_UINT8 addr[B_ADDR_LEN];   //!< Address of the advertisement or SCAN_RSP
+  PTD_INT8 rssi;                //!< Advertisement or SCAN_RSP RSSI
+  PTD_UINT8 dataLen;            //!< Length (in bytes) of the data field (evtData)
+  PTD_UINT8 advData[31];          //!< Data field of advertisement or SCAN_RSP (max of 3 bytes)
 } OBSERVER_INFO_MESSAGE_T;
 
 //ANCS

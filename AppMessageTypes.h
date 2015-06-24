@@ -44,6 +44,7 @@
 typedef uint32 PTD_UINT32;
 typedef uint16 PTD_UINT16;
 typedef uint8 PTD_UINT8;
+typedef int8  PTD_INT8;
 typedef int16 PTD_INT16;
 
 /* ----------- Arduino ----------- */
