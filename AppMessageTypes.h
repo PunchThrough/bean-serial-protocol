@@ -53,6 +53,7 @@ typedef int16 PTD_INT16;
 typedef uint32_t PTD_UINT32;
 typedef uint16_t PTD_UINT16;
 typedef uint8_t  PTD_UINT8;
+typedef int8_t   PTD_INT8;
 typedef int16_t PTD_INT16;
 
 /* ----------- Objective-C ----------- */
