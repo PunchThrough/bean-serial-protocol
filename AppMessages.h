@@ -92,6 +92,7 @@
 #define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE         (1)
 #define  MSG_MIN_LEN_AR_SLEEP                   (4)
 #define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
+#define  MSG_MIN_LEN_GATT_SET_CUSTOM            (1)  //one size byte
 #define  MSG_MIN_LEN_HID_SEND_REPORT            (sizeof(HID_REPORT_T))
 #define  MSG_MIN_LEN_ANCS_GET_NOTI              (5)
 #define  MSG_MIN_LEN_MIDI_WRITE                 (3)
@@ -155,6 +156,7 @@ typedef enum
   MSG_ID_CC_ACCEL_SET_RANGE    = 0x2035,
   MSG_ID_GATT_SET_GATT         = 0x4501,
   MSG_ID_GATT_GET_GATT         = 0x4502,
+  MSG_ID_GATT_SET_CUSTOM       = 0x4503,
   MSG_ID_ANCS_READ             = 0x5001,
   MSG_ID_ANCS_GET_NOTI         = 0x5002,
   MSG_ID_MIDI_READ             = 0x5501,
@@ -182,7 +184,8 @@ typedef enum
  ADV_SWITCH_ANCS = 3,
  ADV_SWITCH_OBSERVER = 4,
  ADV_SWITCH_IBEACON = 5,
- ADV_SWITCH_SIZE = 6 //increment this if any services are added!
+ ADV_SWITCH_CUSTOM = 6,
+ ADV_SWITCH_SIZE
 } ADV_SWITCH_T;
 
 typedef struct 
@@ -193,6 +196,7 @@ typedef struct
   PTD_UINT8 ancs;
   PTD_UINT8 observer;
   PTD_UINT8 ibeacon;
+  PTD_UINT8 custom;
 } ADV_SWITCH_ENABLED_T;
 
 extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
