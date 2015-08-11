@@ -90,6 +90,9 @@
 #define  MSG_MIN_LEN_CC_GET_AR_POWER            (0)
 #define  MSG_MIN_LEN_CC_ACCEL_GET_RANGE         (0)
 #define  MSG_MIN_LEN_CC_ACCEL_SET_RANGE         (1)
+#define  MSG_MIN_LEN_CC_ACCEL_WRITE_REG         (2)
+#define  MSG_MIN_LEN_CC_ACCEL_READ_REG          (2)
+#define  MSG_MIN_LEN_CC_WAKE_ON_ACCEL           (1)
 #define  MSG_MIN_LEN_AR_SLEEP                   (4)
 #define  MSG_MIN_LEN_AR_WAKE_ON_CONNECT         (1)
 #define  MSG_MIN_LEN_GATT_SET_CUSTOM            (1)  //one size byte
@@ -154,6 +157,9 @@ typedef enum
   MSG_ID_CC_GET_AR_POWER       = 0x2021,
   MSG_ID_CC_ACCEL_GET_RANGE    = 0x2030,
   MSG_ID_CC_ACCEL_SET_RANGE    = 0x2035,
+  MSG_ID_CC_ACCEL_WRITE_REG    = 0x2040,
+  MSG_ID_CC_ACCEL_READ_REG     = 0x2041,
+  MSG_ID_CC_WAKE_ON_ACCEL      = 0x2050,
   MSG_ID_GATT_SET_GATT         = 0x4501,
   MSG_ID_GATT_GET_GATT         = 0x4502,
   MSG_ID_GATT_SET_CUSTOM       = 0x4503,
