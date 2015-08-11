@@ -312,6 +312,7 @@ typedef enum {
 
 #define ERROR_MSG_PAYLOAD_SIZE_MAX 10
 #define ERROR_
+
 typedef struct
 {
   PTD_UINT16 errorCode;
