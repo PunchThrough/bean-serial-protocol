@@ -189,14 +189,18 @@ typedef enum {
   ADV_SWITCH_SIZE
 } ADV_SWITCH_T;
 
+
+/**
+ * @brief TODO: Documentation needed
+ */
 typedef struct {
-  PTD_UINT8 standard;
-  PTD_UINT8 hid;
-  PTD_UINT8 midi;
-  PTD_UINT8 ancs;
-  PTD_UINT8 observer;
-  PTD_UINT8 ibeacon;
-  PTD_UINT8 custom;
+  PTD_UINT8 standard;       ///< TODO: Describe member
+  PTD_UINT8 hid;            ///< TODO: Describe member
+  PTD_UINT8 midi;           ///< TODO: Describe member
+  PTD_UINT8 ancs;           ///< TODO: Describe member
+  PTD_UINT8 observer;       ///< TODO: Describe member
+  PTD_UINT8 ibeacon;        ///< TODO: Describe member
+  PTD_UINT8 custom;         ///< TODO: Describe member
 } ADV_SWITCH_ENABLED_T;
 
 extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
@@ -204,15 +208,17 @@ extern ADV_SWITCH_ENABLED_T GATTServiceEnabled;
 // Observer
 #define B_ADDR_LEN 6
 
+
+/**
+ * @brief Structure that encapsulates an Observer Info Message
+ */
 typedef struct {
-  PTD_UINT8 eventType;         //!< Advertisement Type: @ref
-                               //!GAP_ADVERTISEMENT_REPORT_TYPE_DEFINES
-  PTD_UINT8 addrType;          //!< address type: @ref GAP_ADDR_TYPE_DEFINES
-  PTD_UINT8 addr[B_ADDR_LEN];  //!< Address of the advertisement or SCAN_RSP
-  PTD_INT8 rssi;               //!< Advertisement or SCAN_RSP RSSI
-  PTD_UINT8 dataLen;      //!< Length (in bytes) of the data field (evtData)
-  PTD_UINT8 advData[31];  //!< Data field of advertisement or SCAN_RSP (max of 3
-                          //!bytes)
+  PTD_UINT8 eventType;         ///< Advertisement Type: @ref GAP_ADVERTISEMENT_REPORT_TYPE_DEFINES
+  PTD_UINT8 addrType;          ///< address type: @ref GAP_ADDR_TYPE_DEFINES
+  PTD_UINT8 addr[B_ADDR_LEN];  ///< Address of the advertisement or SCAN_RSP
+  PTD_INT8 rssi;               ///< Advertisement or SCAN_RSP RSSI
+  PTD_UINT8 dataLen;           ///< Length (in bytes) of the data field (evtData)
+  PTD_UINT8 advData[31];       ///< Data field of advertisement or SCAN_RSP (max of 3 bytes)
 } OBSERVER_INFO_MESSAGE_T;
 
 // ANCS
@@ -224,12 +230,15 @@ typedef struct {
   PTD_UINT16 attrLength;  // if 0, ignored
 } ANCS_GET_NTF_T;
 
+/**
+ * @brief TODO: Documentation needed
+ */
 typedef struct {
-  PTD_UINT8 eventID;
-  PTD_UINT8 flags;
-  PTD_UINT8 catID;
-  PTD_UINT8 catCount;
-  PTD_UINT32 notiUID;
+  PTD_UINT8 eventID;       ///< TODO: Describe member
+  PTD_UINT8 flags;         ///< TODO: Describe member
+  PTD_UINT8 catID;         ///< TODO: Describe member
+  PTD_UINT8 catCount;      ///< TODO: Describe member
+  PTD_UINT32 notiUID;      ///< TODO: Describe member
 } ANCS_SOURCE_MSG_T;
 
 typedef enum {
@@ -248,6 +257,10 @@ typedef enum {
 
 typedef enum { CMD_ID_ATTR_NOTI = 0, CMD_ID_ATTR_GET = 1 } CMD_ID_T;
 
+
+/**
+ * @brief TODO: Documentation needed
+ */
 typedef enum {
   NOTI_ATTR_ID_APPID = 0,
   NOTI_ATTR_ID_TITLE = 1,
@@ -359,16 +372,20 @@ typedef enum {
   ACC_AXIS_Z,
 } ACC_AXIS_T;
 
+
+/**
+ * @brief Structure that encapsulates an accelerometer reading
+ */
 #ifdef __objectivec
 typedef struct __attribute__((packed))
 #else
 typedef struct
 #endif
 {
-  PTD_INT16 xAxis;
-  PTD_INT16 yAxis;
-  PTD_INT16 zAxis;
-  PTD_UINT8 sensitivity;  // actual value: 2,4,8, or 16 g/512LSB
+  PTD_INT16 xAxis;          ///< TODO: Describe xAxis
+  PTD_INT16 yAxis;          ///< TODO: Describe yAxis
+  PTD_INT16 zAxis;          ///< TODO: Describe zAxis
+  PTD_UINT8 sensitivity;    ///< Valid value(s) include: 2, 4, 8, or 16 g/512LSB
 } ACC_READING_T;
 
 #ifdef __objectivec
@@ -391,11 +408,13 @@ typedef struct
   PTD_UINT8 range;  // actual value: 2,4,8, or 16 g/512LSB
 } ACC_RANGE_SET_T;
 
-// LED
+/**
+ * @brief Structure that encapsulates a LED RGB value
+ */
 typedef struct {
-  PTD_UINT8 red;
-  PTD_UINT8 green;
-  PTD_UINT8 blue;
+  PTD_UINT8 red;      ///< Integer between 0-255
+  PTD_UINT8 green;    ///< Integer between 0-255
+  PTD_UINT8 blue;     ///< Integer between 0-255
 } LED_SETTING_T;
 
 typedef enum { LED_RED = 0x00, LED_GREEN, LED_BLUE } LED_COLOR_T;
