@@ -59,6 +59,7 @@
 #define MSG_MIN_LEN_BT_SET_CONN            (2)
 #define MSG_MIN_LEN_BT_SET_LOCAL_NAME      (1)
 #define MSG_MIN_LEN_BT_SET_PIN             (3)
+#define MSG_MIN_LEN_BT_ENABLE_PAIRING_PIN  (1)
 #define MSG_MIN_LEN_BT_SET_TX_PWR          (1)
 #define MSG_MIN_LEN_BT_GET_CONFIG          (0)
 #define MSG_MIN_LEN_BT_SET_CONFIG          (sizeof(BT_RADIOCONFIG_T))
@@ -126,6 +127,7 @@ typedef enum {
   MSG_ID_BT_SET_CONN          = 0x0502,
   MSG_ID_BT_SET_LOCAL_NAME    = 0x0504,
   MSG_ID_BT_SET_PIN           = 0x0506,
+  MSG_ID_BT_ENABLE_PAIRING_PIN= 0x0507,
   MSG_ID_BT_SET_TX_PWR        = 0x0508,
   MSG_ID_BT_GET_CONFIG        = 0x0510,
   MSG_ID_BT_SET_CONFIG        = 0x0511,
