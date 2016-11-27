@@ -2,4 +2,4 @@
 
 New Repo is now on GitHub:
 
-https://github.com/PunchThrough/bean-application-message-definitions
+https://github.com/PunchThrough/bean-serial-protocol
