@@ -117,6 +117,7 @@ typedef enum {
   MSG_ID_MAJOR_ANCS       = 0x50,
   MSG_ID_MAJOR_MIDI       = 0x55,
   MSG_ID_MAJOR_OBSERVER   = 0x60,
+  MSG_ID_MAJOR_IFTTT      = 0x65,
   MSG_ID_MAJOR_DEBUG      = 0xFE
 } MSG_ID_MAJOR_T;
 
@@ -170,6 +171,8 @@ typedef enum {
   MSG_ID_AR_WAKE_ON_CONNECT   = 0x3010,
   MSG_ID_HID_SEND_REPORT      = 0x3500,
   MSG_ID_ERROR_CC             = 0x4000,
+  MSG_ID_IFTTT_EVENT          = 0x6500,
+  MSG_ID_IFTTT_EVENT_RESPONSE = 0x6501,
   MSG_ID_DB_LOOPBACK          = 0xFE00,
   MSG_ID_DB_COUNTER           = 0xFE01,
   MSG_ID_DB_E2E_LOOPBACK      = 0xFE02,
