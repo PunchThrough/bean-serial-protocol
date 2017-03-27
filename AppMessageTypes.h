@@ -65,6 +65,16 @@ typedef UInt8  PTD_UINT8;
 typedef int8_t PTD_INT8;
 typedef SInt16 PTD_INT16;
 
+
+/* ----------- Swift ----------- */
+#elif __swift
+
+typedef UInt32 PTD_UINT32;
+typedef UInt16 PTD_UINT16;
+typedef UInt8  PTD_UINT8;
+typedef SInt8  PTD_INT8;
+typedef SInt16 PTD_INT16;
+
 #else
 #error define a platform/language that you are building for
 #endif
