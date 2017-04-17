@@ -1,5 +1,8 @@
-# DEPRECATED
+# Bean Serial Protocol
 
-New Repo is now on GitHub:
+This repository contains header files and documentation that define the custom serial protocol that the Bean SDK(s) and Bean firmware(s) use to communicate.
 
-https://github.com/PunchThrough/bean-serial-protocol
+Further Reading:
+
+* [App Message Types](docs/app-message-types.md)
+* [Serial Message Protocol](docs/serial-message-protocol.md)
